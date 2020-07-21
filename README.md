@@ -1,2 +1,1 @@
-# cv-marvync
-Short CV
+![CV summary](./CV-marvync.png)
