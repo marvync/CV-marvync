@@ -1,0 +1,311 @@
+%-------------------------------------
+% LaTeX Resume for Physicist
+% Author : Marvyn Inga
+%-------------------------------------
+
+\documentclass[letterpaper,12pt]{article}[leftmargin=*]
+
+\usepackage[empty]{fullpage}
+\usepackage{enumitem}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
+\usepackage{fontawesome}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{mhchem}
+
+%-------------------------------------------------- SETTINGS HERE --------------------------------------------------
+% Header settings
+\def \fullname {Marvyn Inga}
+\def \subtitle {Physicist, \faMale}
+
+\def \linkedinicon {\faLinkedin}
+\def \linkedinlink {https://www.linkedin.com/in/marvync/}
+\def \linkedintext {/marvync}
+
+\def \phoneicon {\faPhone}
+\def \phonetext {+55-19-983638657}
+
+\def \emailicon {\faEnvelope}
+\def \emaillink {mailto:marvyn.inga@gmail.com}
+\def \emailtext {marvyn.inga@gmail.com}
+
+\def \githubicon {\faGithub}
+\def \githublink {https://github.com/marvync}
+\def \githubtext {/marvync}
+
+\def \headertype {\doublecol} % \singlecol or \doublecol
+
+% Misc settings
+\def \entryspacing {-0pt}
+
+\def \bulletstyle {\faAngleRight}
+
+% Define colours
+\definecolor{primary}{HTML}{000000}
+\definecolor{secondary}{HTML}{00539C}
+\definecolor{accent}{HTML}{263238}
+\definecolor{links}{HTML}{1565C0}
+
+%------------------------------------------------------------------------------------------------------------------- 
+
+% Defines to make listing easier
+\def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
+\def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
+\def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.1in}
+
+% Define the link colours
+\hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+}
+
+% Set the margin alignment 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Custom commands
+
+% Sections
+\renewcommand{\section}[2]{\vspace{5pt}
+  \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
+}
+
+% Entry start and end, for spacing
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
+\newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+
+% Itemized list for the bullet points under an entry, if necessary
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% Resume item
+\renewcommand{\labelitemii}{\bulletstyle}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Entry with title, subheading, date(s), and location
+\newcommand{\resumeEntryTSDL}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+      \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry with title and date(s)
+\newcommand{\resumeEntryTD}[2]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry for special (skills)
+\newcommand{\resumeEntryS}[2]{
+  \item[]\small{
+    \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
+  }
+}
+
+% Triple column header
+\newcommand{\triplecol}[3]{
+	\begin{tabularx}{\textwidth}{XXX}
+	{\small#1} & {\small#2} & {\small#3}\\
+	\end{tabularx}
+}
+
+% Double column header
+\newcommand{\doublecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[c]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l@{\hspace{1.5em}}l}
+        {\small#4} & {\small#1} \\
+        {\small#5} & {\small#2} \\
+        {\small#6} & {\small#3}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+% Single column header
+\newcommand{\singlecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[b]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l}
+        {\small#1} \\
+        {\small#2} \\
+        {\small#3} \\
+        {\small#4} \\
+        {\small#5} \\
+        {\small#6}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+\begin{document}
+%-------------------------------------------------- BEGIN HERE --------------------------------------------------
+
+%---------------------------------------------------- HEADER ----------------------------------------------------
+
+\headertype{\linkedin}{\github}{}{\phone}{\email}{} % Set the order of items here
+%\vspace{-5pt} % Set a negative value to push the body up, and the opposite
+
+%-------------------------------------------------- EDUCATION --------------------------------------------------
+\section{\faGraduationCap}{Education}
+\vspace{-0.05cm}
+\resumeEntryStart
+	\resumeEntryTSDL
+    {University of Campinas}{2013 -- 2020}
+	{M.Sc. \& Ph.D. in Physics}{SP, Brazil}
+\resumeEntryEnd
+
+\vspace{-0.4cm}
+
+\resumeEntryStart
+	\resumeEntryTSDL
+	{National University of Engineering}{2006 -- 2012}
+	{B.Sc. in Physics}{Lima, Peru}
+\resumeEntryEnd
+\vspace{-0.2cm}
+
+%-------------------------------------------------- SUMMARY --------------------------------------------------
+\section{\faFolderOpen}{Summary}
+\vspace{-1.3cm}
+
+\resumeEntryStart
+\resumeEntryTSDL
+{}{}
+{}{}
+\resumeItemListStart
+\resumeItem {Experience working with experimental optics and photonics in free space and fiber optics.}
+\resumeItem {Strong capacity to design science experiments and automated sophisticated scientific instruments.}
+\resumeItem {Ability to combine quantitative methods of mathematics with applied science in order to solve problems. Solid knowledge of linear algebra, multi-variable calculus, statistic and probability.}
+\resumeItem {Proficient in Linux and Windows with advance knowledge of Python, Julia and a variety of specialized libraries to acquire, process and present data (Conda, Numpy, Pandas, Matplotlib, Scipy, Jupyter, etc).}
+\resumeItem {Ample experience teaching students at the undergraduate level, especially in experimental Physics courses.}
+\resumeItemListEnd
+\resumeEntryEnd
+\vspace{-0.2cm}
+
+%-------------------------------------------------- LANGUAGES --------------------------------------------------
+\section{\faComment}{Languages}
+\vspace{-0.5cm}
+\resumeEntryStart
+	\triplecol{\resumeEntryS{English} {Professional working}}{\resumeEntryS{Portuguese}{Full professional}}{\resumeEntryS{Spanish}{Native}}
+\resumeEntryEnd
+\vspace{-0.1cm}
+
+%-------------------------------------------------- PROJECTS --------------------------------------------------
+\section{\faFlask}{Projects}
+\vspace{-0.1cm}
+
+\resumeEntryStart
+\resumeEntryTD
+{Dispersion engineering in optical microcavities}{UNICAMP, 2015 - 2020}
+\resumeItemListStart
+\resumeItem{We tailored new light sources based on non-linear effects in microcavities. This project was an excellent opportunity to acquire new abilities and skills in order to communicate equipment from our hardware; acquire, process and visualize millions data points; and optimizing processes using several Python libraries.}
+\resumeItemListEnd
+\resumeEntryEnd
+
+\vspace{-0.5cm}
+
+\resumeEntryStart
+\resumeEntryTD
+{Tunable light filters}{SAMSUNG \& UNICAMP, 2017}
+\resumeItemListStart
+\resumeItem {It was a partnership between SAMSUNG and the Device Research Laboratory where I participated contributing to the colour theory transformations and algorithms necessary to identify colors emitted by the homemade filters. For this, we used an spectrometer and a Python \href{https://www.colour-science.org/}{package} for colour science.}
+\resumeItemListEnd
+\resumeEntryEnd
+
+\vspace{-0.5cm}
+
+\resumeEntryStart
+\resumeEntryTD
+{High sensitivity spectroscopy}{UNICAMP, 2013 - 2015}
+\resumeItemListStart
+\resumeItem{We demonstrated the possibility of using optical cavities for measurements of small absorption coefficients of liquid and solid samples. For this, we used a solid-state laser and an optical cavity of moderate finesse.}
+\resumeItemListEnd
+\resumeEntryEnd
+
+\vspace{-0.5cm}
+
+\resumeEntryStart
+\resumeEntryTD
+{Magnetic properties of \ce{CuO2} nanoparticles on graphite and graphene}{UFABC, 2012}
+\resumeItemListStart
+\resumeItem {We obtained graphene from highly oriented graphite blocks using the scotch tape method. Nanoparticles were produced by ablation laser and subsequently deposited on graphene. We did the optical and magnetic characterization of those samples using EPR, FT-IR, AFM and Optical Microscopy.}
+
+\resumeItemListEnd
+\resumeEntryEnd
+
+\vspace{-0.3cm}
+
+%-------------------------------------------------- PUBLICATIONS --------------------------------------------------
+\section{\faBarChart}{Publications}
+\vspace{-1.3cm}
+
+\resumeEntryStart
+\resumeEntryTSDL
+{}{}
+{}{}
+\resumeItemListStart
+\resumeItem {L. Fujii, \textbf{M. Inga}, J. H. Soares, Y. A. V. Espinel, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion tailoring in wedge microcavities for Kerr comb generation. Optics Letters Vol. 45, Issue 12, pp. 3232-3235 (2020). \href{https://www.osapublishing.org/ol/abstract.cfm?uri=ol-45-12-3232}{\faExternalLink}}
+\resumeItem{L. Fujii, \textbf{M. Inga}, J. H. Soares, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion Control in Silicon Oxide Wedge Microdisks. In CLEO: QELS Fundamental Science, pp. JTu2A-111. Optical Society of America (2018). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_SI-2018-JTu2A.111}{\faExternalLink}}
+\resumeItemListEnd
+\resumeEntryEnd
+
+\vspace{-0.3cm}
+
+
+%-------------------------------------------------- PUBLICATIONS --------------------------------------------------
+\section{\faGroup}{Conferences}
+\vspace{-1.4cm}
+
+\resumeEntryStart
+\resumeEntryTSDL
+{}{}
+{}{}
+\resumeItemListStart
+\resumeItem {Oral presentation at Conference on Lasers and Electro-Optics (CLEO) 2020, San Jose, California, USA. \href{https://www.cleoconference.org/home/schedule/}{\faExternalLink}}
+\resumeItem{Oral presentation at SBFoton Conference 2019, INPE, São Paulo, Brazil. \href{https://www.sbfoton.org.br/tech_sessions/}{\faExternalLink}}
+\resumeItemListEnd
+\resumeEntryEnd
+
+\vspace{-0.3cm}
+
+\end{document}
