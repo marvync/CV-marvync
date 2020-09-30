@@ -3,7 +3,7 @@
 % Author : Marvyn Inga
 %-------------------------------------
 
-\documentclass[letterpaper,12pt]{article}[leftmargin=*]
+\documentclass[letterpaper, 12pt]{article}[leftmargin=*]
 
 \usepackage[empty]{fullpage}
 \usepackage{enumitem}
@@ -47,8 +47,6 @@
 \def \headertype {\doublecol} % \singlecol or \doublecol
 
 % Misc settings
-\def \entryspacing {-0pt}
-
 \def \bulletstyle {\faAngleRight}
 
 % Define colours
@@ -88,54 +86,64 @@
 % Custom commands
 
 % Sections
-\renewcommand{\section}[2]{\vspace{5pt}
+\renewcommand{\section}[2]{
   \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
 }
 
 % Entry start and end, for spacing
-\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
-\newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]\itemsep8pt}
+\newcommand{\resumeEntryEnd}{\end{itemize}}
 
 % Itemized list for the bullet points under an entry, if necessary
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]\itemsep-3pt}
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 % Resume item
 \renewcommand{\labelitemii}{\bulletstyle}
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1}
   }
 }
 
 % Entry with title, subheading, date(s), and location
 \newcommand{\resumeEntryTSDL}[4]{
-  \vspace{-1pt}\item[]
+  \item[]
     \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
       \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+      \vspace{-0.3cm}
       \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
-    \end{tabularx}\vspace{-6pt}
+    \end{tabularx}\vspace{-0.1cm}
 }
 
 % Entry with title and date(s)
 \newcommand{\resumeEntryTD}[2]{
-  \vspace{-1pt}\item[]
+  \item[]
     \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
-      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
-    \end{tabularx}\vspace{-6pt}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2}
+    \end{tabularx}\vspace{3pt}
 }
 
 % Entry for special (skills)
 \newcommand{\resumeEntryS}[2]{
   \item[]\small{
-    \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
+    \textbf{\color{primary}#1 }{ #2 }
   }
 }
 
 % Triple column header
 \newcommand{\triplecol}[3]{
+	\vspace{-0.3cm}
 	\begin{tabularx}{\textwidth}{XXX}
-	{\small#1} & {\small#2} & {\small#3}\\
+	{\small#1} & {\small#2} & {\small#3}
+	\end{tabularx}
+}
+
+% Fourth column header
+\newcommand{\fourthcol}[4]{
+	\vspace{-0.3cm}
+	\begin{tabularx}{\textwidth}{XXXX}
+		{\small#1} & {\small#2} & {\small#3} & {\small#4}
 	\end{tabularx}
 }
 
@@ -155,6 +163,7 @@
       \end{tabular}
     }
   \end{tabularx}
+\vspace{0.3cm}
 }
 
 % Single column header
@@ -184,128 +193,130 @@
 %---------------------------------------------------- HEADER ----------------------------------------------------
 
 \headertype{\linkedin}{\github}{}{\phone}{\email}{} % Set the order of items here
-%\vspace{-5pt} % Set a negative value to push the body up, and the opposite
 
 %-------------------------------------------------- EDUCATION --------------------------------------------------
 \section{\faGraduationCap}{Education}
-\vspace{-0.05cm}
-\resumeEntryStart
-	\resumeEntryTSDL
-    {University of Campinas}{2013 -- 2020}
-	{M.Sc. \& Ph.D. in Physics}{SP, Brazil}
-\resumeEntryEnd
-
-\vspace{-0.4cm}
 
 \resumeEntryStart
+	\small
 	\resumeEntryTSDL
-	{National University of Engineering}{2006 -- 2012}
-	{B.Sc. in Physics}{Lima, Peru}
+    {University of Campinas (UNICAMP)}{São Paulo, Brazil}
+	{M.Sc. \& Ph.D. in Physics}{Current}
+
+	\resumeEntryTSDL
+	{National University of Engineering (UNI)}{Lima, Peru}
+	{B.Sc. in Physics}{2013}
 \resumeEntryEnd
-\vspace{-0.2cm}
+
 
 %-------------------------------------------------- SUMMARY --------------------------------------------------
 \section{\faFolderOpen}{Summary}
-\vspace{-1.3cm}
-
-\resumeEntryStart
-\resumeEntryTSDL
-{}{}
-{}{}
 \resumeItemListStart
-\resumeItem {Experience working with optics and photonics, with emphasis on free space and fiber optics experiments.}
+\resumeItem {Experience working with optics and photonics, with emphasis on free-space and fiber optics experiments.}
 \resumeItem {Strong capacity to design science experiments and automate sophisticated scientific instruments.}
-\resumeItem {Ability to combine quantitative methods of mathematics with applied science in order to solve problems. Solid knowledge of linear algebra, multi-variable calculus, statistic and probability.}
-\resumeItem {Proficient in Linux and Windows with advance knowledge of Python and a variety of specialized libraries to acquire, process and present data (Anaconda, Numpy, Pandas, Matplotlib, Scipy, Jupyter, etc).}
-\resumeItem {Ample experience teaching students at the undergraduate level, especially in experimental Physics courses.}
+\resumeItem {Proficient in a variety of specialized computer programs to simulate, acquire, analyze, and visualize data.}
+%\resumeItem {Ability to combine quantitative methods of mathematics with applied science in order to solve real problems.}
+\resumeItem {Considerable experience teaching students at the undergraduate level.}
 \resumeItemListEnd
-\resumeEntryEnd
-\vspace{-0.2cm}
 
 %-------------------------------------------------- LANGUAGES --------------------------------------------------
 \section{\faComment}{Languages}
-\vspace{-0.5cm}
 \resumeEntryStart
-	\triplecol{\resumeEntryS{English} {Professional}}{\resumeEntryS{Portuguese}{Fluent}}{\resumeEntryS{Spanish}{Native}}
+	\small
+	\triplecol{\resumeEntryS{English} {Professional}}{\resumeEntryS{Spanish}{Native}}{\resumeEntryS{Portuguese}{Fluent}}
 \resumeEntryEnd
-\vspace{-0.1cm}
 
 %-------------------------------------------------- PROJECTS --------------------------------------------------
 \section{\faFlask}{Projects}
-\vspace{-0.1cm}
 
 \resumeEntryStart
+\small
 \resumeEntryTD
-{Dispersion engineering in optical microcavities}{UNICAMP, 2015 - 2020}
-\resumeItemListStart
-\resumeItem{We tailored new laser sources based on non-linear effects in microcavities. This project was an excellent opportunity to acquire new knowledge and skills in order to communicate equipment from our hardware; acquire, process and visualize millions of data points; and optimize processes using several PyLibraries.}
-\resumeItemListEnd
-\resumeEntryEnd
+{Dispersion engineering in optical microcavities}{UNICAMP, 2020}
+{We tailored the group velocity dispersion (GVD) of silica microresonators using different methods. In wedge microresonators, we tuned the GVD controlling the sidewall angle without affecting the free spectral range \href{https://arxiv.org/abs/2003.11625v1}{\faExternalLink}. In spherical microresonators, we used alumina coating of different thicknesses with the same intention \href{https://arxiv.org/abs/2009.07826}{\faExternalLink}. We reported these methods in scientific journals showing the capability of both microresonators to produce tailored optical frequency combs. Here we learned about whispering-gallery microcavities, dispersion, dispersion control, atomic layer deposition, four-wave mixing, and optical frequency combs. This project was an excellent opportunity to acquire new knowledge and skills to communicate equipment from our hardware, analyze millions of data points, and optimize processes using several Python libraries. Being aware of the importance of open access in science, we deposited all material used in this project in Zenodo \href{https://zenodo.org/record/3932243}{\faExternalLink}.}
 
-\vspace{-0.5cm}
-
-\resumeEntryStart
 \resumeEntryTD
 {Tunable light filters}{SAMSUNG \& UNICAMP, 2017}
-\resumeItemListStart
-\resumeItem {It was a partnership between SAMSUNG and the Device Research Laboratory where I participated contributing to the colour theory transformations and algorithms necessary to identify colors emitted by the homemade filters. For this, we used an spectrometer and a Python \href{https://www.colour-science.org/}{package} for colour science.}
-\resumeItemListEnd
-\resumeEntryEnd
+{It was a partnership between SAMSUNG and the Device Research Laboratory (LPD-Unicamp) where I participated in contributing to the colour theory transformations and algorithms necessary to identify colors emitted by the homemade filters. For this, we used an spectrometer and a Python \href{https://www.colour-science.org/}{package} for colour science.}
 
-\vspace{-0.5cm}
-
-\resumeEntryStart
 \resumeEntryTD
-{High sensitivity spectroscopy}{UNICAMP, 2013 - 2015}
-\resumeItemListStart
-\resumeItem{We demonstrated the possibility of using optical cavities for measurements of small absorption coefficients of liquid and solid samples. For this, I used a solid-state laser and an optical cavity of moderate finesse.}
-\resumeItemListEnd
-\resumeEntryEnd
+{High sensitivity spectroscopy}{UNICAMP, 2015}
+{We demonstrated the possibility of using optical cavities of moderate finesse for measurements of small absorption coefficients of nearly transparent liquid and solid samples. With this sensitive technique, based on measurements of ring-down times, I could isolate the absorption coefficient of liquids contained inside a transparent cuvette oriented at Brewster's angle. This project served to acquire experience working on spectroscopy and free-space optics.}
 
-\vspace{-0.5cm}
-
-\resumeEntryStart
 \resumeEntryTD
 {Magnetic properties of \ce{CuO2} nanoparticles on graphite and graphene}{UFABC, 2012}
-\resumeItemListStart
-\resumeItem {Here, I focused on obtaining graphene from highly oriented graphite blocks using the scotch tape method. Subsequently, nanoparticles were obtained by laser ablation and deposited on graphene samples. The optical and magnetic characterization were done with the intention to detect changes in their properties.}
+{Here, I focused on obtaining graphene from highly oriented graphite blocks using the scotch tape method. Afterwards, we obtained nanoparticles by laser ablation and deposited on graphene samples. The optical and magnetic characterization of the samples were done with the intention of detect changes in their properties.}
 
-\resumeItemListEnd
 \resumeEntryEnd
-
-\vspace{-0.3cm}
 
 %-------------------------------------------------- PUBLICATIONS --------------------------------------------------
 \section{\faBarChart}{Publications}
-\vspace{-1.3cm}
+\small
+\vspace{10pt}
 
-\resumeEntryStart
-\resumeEntryTSDL
-{}{}
-{}{}
+\textbf{Journals}
+\vspace{-5pt}
 \resumeItemListStart
+\resumeItem {\textbf{M. Inga}, L. Fujii, J. M. da Silva Filho, J. Quintino, A. Ferlauto, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. Alumina coating for dispersion management in ultra-high Q microresonators. Submited to APL-Photonics. \href{https://arxiv.org/abs/2009.07826}{\faExternalLink}}
+\vspace{2pt}
 \resumeItem {L. Fujii, \textbf{M. Inga}, J. H. Soares, Y. A. V. Espinel, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion tailoring in wedge microcavities for Kerr comb generation. Optics Letters Vol. 45, Issue 12, pp. 3232-3235 (2020). \href{https://www.osapublishing.org/ol/abstract.cfm?uri=ol-45-12-3232}{\faExternalLink}}
+\resumeItemListEnd
+
+\textbf{Conferences}
+\vspace{-5pt}
+\resumeItemListStart
+\resumeItem {\textbf{M. Inga}, L. F. dos Santos, J. M. C. da Silva Filho, Y. A. V. Espinel, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. Tailoring group-velocity dispersion in microspheres with alumina coating. In CLEO, pp JTh2C.4. Optical Society of America (2020). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_AT-2020-JTh2C.4}{\faExternalLink}}
+\vspace{2pt}
 \resumeItem{L. Fujii, \textbf{M. Inga}, J. H. Soares, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion Control in Silicon Oxide Wedge Microdisks. In CLEO: QELS Fundamental Science, pp. JTu2A-111. Optical Society of America (2018). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_SI-2018-JTu2A.111}{\faExternalLink}}
 \resumeItemListEnd
-\resumeEntryEnd
 
-\vspace{-0.3cm}
-
-
-%-------------------------------------------------- PUBLICATIONS --------------------------------------------------
-\section{\faGroup}{Conferences}
-\vspace{-1.4cm}
-
+%-------------------------------------------------- Teacher Internship Programs --------------------------------------------------
+\section{\faPencil}{Teacher Internship Programs}
 \resumeEntryStart
-\resumeEntryTSDL
-{}{}
-{}{}
-\resumeItemListStart
-\resumeItem {Oral presentation at Conference on Lasers and Electro-Optics (CLEO) 2020, San Jose, California, USA. \href{https://www.cleoconference.org/home/schedule/}{\faExternalLink}}
-\resumeItem{Oral presentation at SBFoton Conference 2019, INPE, São Paulo, Brazil. \href{https://www.sbfoton.org.br/tech_sessions/}{\faExternalLink}}
-\resumeItemListEnd
+\resumeEntryTD
+{\small Electric Circuits and Electromagnetism}{UNIVESP, 2019-II} 
+\small{Employed on a temporary contract by the UNIVESP in teaching-related responsibilities.}
+\resumeEntryTD
+{Experimental Physics IV: Alternating Current and Optics}{UNICAMP, 2015-II, 2016-II}
+\small{Participating in the Docent Training Stage Program at UNICAMP.}
+\resumeEntryTD
+{Experimental Physics III: Electricity and Magnetism}{UNICAMP, 2014-II, 2016-I}
+\small{Participating in the Docent Training Stage Program at UNICAMP.}
 \resumeEntryEnd
 
-\vspace{-0.3cm}
+%-------------------------------------------------- Professional Affiliations --------------------------------------------------
+\section{\faGroup}{Professional Affiliations}
+\resumeEntryStart
+\resumeEntryTD
+{\small Optical Society of America (OSA)}{2007-Current}
+\small{Founder member of the OSA Student Chapter UNI, Lima, Peru. Currently, as a member of the OSA Student Chapter UNICAMP, São Paulo, Brazil.}
+\resumeEntryEnd
+
+%-------------------------------------------------- Computer skills --------------------------------------------------
+\section{\faDesktop}{Computer skills}
+\resumeItemListStart
+\resumeItem{I use Latex for scientific reports and Mendeley as a reference manager. To create and edit vectorial images for publication, I use Inkscape. Frequently, my presentations have been done in LibreOffice Impress or Beamer.}
+\resumeItem{Because Office 365 is free for academic institutions, I usually use Microsoft Teams for communication and collaboration.}
+\resumeItem{I use pyVISA and pyQt to control instruments and automate experiments. For data exploration and visualization, I use Jupyter notebooks, Pandas, Numpy, Scipy, Sympy, and Matplotlib. Specific problems always will require the use of other Python packages.}
+\resumeItem{I use Linux as a development and production environment, but sometimes in the lab, Windows is required.}
+\resumeItem{I have a strong preference for open-source software, but if I have access to competitive proprietary software like Comsol, Mathematica or Matlab, I will be able to use them too.}
+\resumeItemListEnd
+
+%-------------------------------------------------- Interests --------------------------------------------------
+\section{\faThumbTack}{Interests}
+\resumeEntryStart
+\small
+\fourthcol{\resumeEntryS{}{Microcomb technology}}{\resumeEntryS{}{Optical sensing}}{\resumeEntryS{}{Optical spectroscopy}}{\resumeEntryS{}{Biophotonics}}
+\resumeEntryEnd
+
+%-------------------------------------------------- References --------------------------------------------------
+\section{\faTripadvisor}{References}
+
+\vspace{5pt}
+Two professors with whom I have worked very closely in my graduate and postgraduate studies are:
+\begin{description}
+	\item[Dr. Carmen Eyzaguirre] Professor at \href{https://fc.uni.edu.pe/fc/index.php/noticias-secundarias/item/12-eyzaguirre-gorvenia-carmen}{Optics and Photonics Laboratory} - UNI. \href{ceyzaguirre@uni.edu.pe}{\faEnvelopeO} ceyzaguirre@uni.edu.pe
+	\item[Dr. Gustavo Wiederhecker] Professor at \href{https://sites.ifi.unicamp.br/lpd/}{Device Research Laboratory} - UNICAMP. \href{gsw@unicamp.br}{\faEnvelopeO} gsw@unicamp.br
+\end{description}
 
 \end{document}
