@@ -26,7 +26,7 @@
 
 %-------------------------------------------------- SETTINGS HERE --------------------------------------------------
 % Header settings
-\def \fullname {Marvyn Inga}
+\def \fullname {\Huge Marvyn Inga}
 \def \subtitle {Physicist, \faMale}
 
 \def \linkedinicon {\faLinkedin}
@@ -109,11 +109,11 @@
 % Entry with title, subheading, date(s), and location
 \newcommand{\resumeEntryTSDL}[4]{
   \item[]
-    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+    \begin{tabularx}{0.98\textwidth}{X@{\hspace{60pt}}r}
       \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
-      \vspace{-0.3cm}
+      \vspace{-0.37cm}
       \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
-    \end{tabularx}\vspace{-0.1cm}
+    \end{tabularx}\vspace{-0.37cm}
 }
 
 % Entry with title and date(s)
@@ -121,7 +121,7 @@
   \item[]
     \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
       \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2}
-    \end{tabularx}\vspace{3pt}
+    \end{tabularx}\vspace{2pt}
 }
 
 % Entry for special (skills)
@@ -200,27 +200,29 @@
 \resumeEntryStart
 	\small
 	\resumeEntryTSDL
-    {University of Campinas (UNICAMP)}{São Paulo, Brazil}
-	{M.Sc. \& Ph.D. in Physics}{Current}
-
+    {Ph.D. in Physics}{São Paulo, Brazil}
+	{\footnotesize University of Campinas - UNICAMP}{\footnotesize 2015 - Current}
 	\resumeEntryTSDL
-	{National University of Engineering (UNI)}{Lima, Peru}
-	{B.Sc. in Physics}{2013}
+	{M.Sc. in Physics}{São Paulo, Brazil}
+	{\footnotesize University of Campinas - UNICAMP}{\footnotesize 2013 - 2015}
+	\resumeEntryTSDL
+	{B.Sc. in Physics}{Lima, Peru}
+	{\footnotesize National University of Engineering - UNI}{\footnotesize 2006 - 2012}
 \resumeEntryEnd
-
-
+\vspace{0.15cm}
 %-------------------------------------------------- SUMMARY --------------------------------------------------
 \section{\faFolderOpen}{Summary}
 \resumeItemListStart
-\resumeItem {Experience working with optics and photonics, with emphasis on free-space and fiber optics experiments.}
-\resumeItem {Strong capacity to design science experiments and automate sophisticated scientific instruments.}
-\resumeItem {Proficient in a variety of specialized computer programs to simulate, acquire, analyze, and visualize data.}
+\resumeItem {Experience working with optics and photonics, with emphasis on the experimental work.}
+\resumeItem {Strong capacity to design science experiments and automate sophisticated instruments.}
+\resumeItem {Proficient in a variety of specialized computer programs to acquire, analyze, and visualize data.}
 %\resumeItem {Ability to combine quantitative methods of mathematics with applied science in order to solve real problems.}
 \resumeItem {Considerable experience teaching students at the undergraduate level.}
 \resumeItemListEnd
 
 %-------------------------------------------------- LANGUAGES --------------------------------------------------
 \section{\faComment}{Languages}
+\vspace{-0.2cm}
 \resumeEntryStart
 	\small
 	\triplecol{\resumeEntryS{Spanish}{Native}}{\resumeEntryS{Portuguese}{Fluent}}{\resumeEntryS{English} {Professional}}
@@ -232,56 +234,64 @@
 \resumeEntryStart
 \small
 \resumeEntryTD
-{Dispersion engineering in optical microcavities}{UNICAMP, 2016-2020}
-{We engineered the group velocity dispersion (GVD) of silica microresonators using different methods. In wedge microresonator, we did it by controlling its sidewall angle without affecting significantly the free spectral range \href{https://arxiv.org/abs/2003.11625v1}{\faExternalLink}. In spherical microresonator, we used ALD alumina coating of different thicknesses with the same intention \href{https://arxiv.org/abs/2009.07826}{\faExternalLink}. We reported both methods in scientific journals showing the capability of both microresonators to produce tailored optical frequency combs. Here, I wrote scripts in Python that allowed us to build a reliable frequency axis using a calibrated fiber-MZI, recognize all mode families through their quality-factors, and analyze dispersion from dense optical spectra. This project was an excellent opportunity to acquire new knowledge and skills to fabricate silica microresonators, simulate their optical modes, communicate sophisticated equipment from our hardware, process AFM images, analyze millions of data point, and optimize processes using several Python libraries. The data that support the findings of this project are openly available in Zenodo \href{https://zenodo.org/record/3932243}{\faExternalLink}.}
+{Kerr optical frequency comb generation in silica microresonators}{UNICAMP, 2016-2020}
+{\footnotesize Optical frequency combs (OFCs) are more elegant, energy-efficient and integrated light sources. In this project, we engineered the group velocity dispersion of silica microresonators with the intention to generate more suitable OFCs. For example, in wedge microresonator we did it by controlling its sidewall angle without affecting significantly the free spectral range. In spherical microresonator, we used ALD alumina coating of different thicknesses with the same intention. We reported both methods in scientific journals like Optics Letters and APL Photonics. My contribution to this project was principally in the experimental work, automating instruments and acquiring data. Also, I wrote Python scripts with different objectives, for example, to identify and characterize all mode families through their quality-factors, or to analyze the dispersion of the microresonators from dense optical spectra. In conclusion, this project was an excellent opportunity to acquire new knowledge and skills to fabricate silica microresonators, simulate optical modes, communicate equipment from our hardware, process AFM images, analyze millions of data point, and optimize processes using several Python libraries. The data that support the findings of this project are openly available in Zenodo.}
 
 \resumeEntryTD
 {Tunable light filters}{SAMSUNG \& UNICAMP, 2017}
-{It was a partnership between SAMSUNG and the Device Research Laboratory (LPD-Unicamp) where I participated in contributing to the colour theory transformations and algorithms necessary to identify colors emitted by the homemade filters. For this, we used an spectrometer and a Python \href{https://www.colour-science.org/}{package} for colour science.}
+{\footnotesize It was a partnership between SAMSUNG and the Device Research Laboratory (LPD-Unicamp) where I participated in contributing to the colour theory transformations and algorithms necessary to identify colors emitted by the homemade filters. For this, I used an spectrometer and a Python \href{https://www.colour-science.org/}{package} for colour science.}
 
 \resumeEntryTD
 {High sensitivity spectroscopy}{UNICAMP, 2014-2015}
-{In this project, I demonstrated the possibility of using optical cavities of moderate finesse for measurements of small absorption coefficients of nearly transparent liquid and solid samples. With this sensitive technique, based on measurements of ring-down times, I isolated the absorption coefficient of liquids contained inside a transparent cuvette oriented at Brewster's angle. This project served to acquire experience working on spectroscopy and free-space optics. \href{http://repositorio.unicamp.br/handle/REPOSIP/305744}{Link in portuguese \faExternalLink}}
+{\footnotesize In this project, I demonstrated the possibility of using optical cavities of moderate finesse for measurements of small absorption coefficients of nearly transparent liquid and solid samples. With this sensitive technique, based on measurements of ring-down times, I isolated the absorption coefficient of liquids contained inside a transparent cuvette oriented at Brewster's angle. This project was important to acquire experience working on spectroscopy and free-space optics. \href{http://repositorio.unicamp.br/handle/REPOSIP/305744}{Link in portuguese \faExternalLink}}
 
 \resumeEntryTD
 {Magnetic properties of \ce{CuO2} nanoparticles on graphite and graphene}{UFABC, 2012}
-{Here, I focused on obtaining graphene from highly oriented graphite blocks using the scotch tape method. Afterwards, we obtained nanoparticles by laser ablation and deposited on graphene samples. The optical and magnetic characterization of the samples were done with the intention of detect changes in their properties.}
+{\footnotesize Here, I focused on obtaining graphene from highly oriented graphite blocks using the scotch tape method. Afterwards, we obtained nanoparticles by laser ablation and deposited on graphene samples. The optical and magnetic characterization of the samples were done with the intention of detect changes in their properties.}
 
 \resumeEntryEnd
 
 %-------------------------------------------------- PUBLICATIONS --------------------------------------------------
 \section{\faBarChart}{Publications}
 \small
-\vspace{10pt}
+\vspace{6pt}
 
 \textbf{Journals}
-\vspace{-5pt}
+\vspace{-3pt}
 \resumeItemListStart
-\resumeItem {\textbf{M. Inga}, L. Fujii, J. M. da Silva Filho, J. Quintino, A. Ferlauto, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. Alumina coating for dispersion management in ultra-high Q microresonators. Under Review, \href{https://arxiv.org/abs/2009.07826}{arXiv \faExternalLink}.}
+\resumeItem {\underline{M. Inga}, L. Fujii, J. M. da Silva Filho, J. Quintino, A. Ferlauto, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. Alumina coating for dispersion management in ultra-high Q microresonators. \textit{APL Photonics} 5, 116107 (2020). This article was chose by the editors as a Featured Article. \href{https://aip.scitation.org/doi/10.1063/5.0028839}{\faExternalLink}}
 \vspace{2pt}
-\resumeItem {L. Fujii, \textbf{M. Inga}, J. H. Soares, Y. A. V. Espinel, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion tailoring in wedge microcavities for Kerr comb generation. Optics Letters Vol. 45, Issue 12, pp. 3232-3235 (2020). \href{https://www.osapublishing.org/ol/abstract.cfm?uri=ol-45-12-3232}{\faExternalLink}}
+\resumeItem {L. Fujii, \underline{M. Inga}, J. H. Soares, Y. A. V. Espinel, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion tailoring in wedge microcavities for Kerr comb generation. \textit{Optics Letters} Vol. 45, Issue 12, pp. 3232-3235 (2020). \href{https://www.osapublishing.org/ol/abstract.cfm?uri=ol-45-12-3232}{\faExternalLink}}
 \resumeItemListEnd
 
 \textbf{Conferences}
-\vspace{-5pt}
+\vspace{-3pt}
 \resumeItemListStart
-\resumeItem {\textbf{M. Inga}, L. F. dos Santos, J. M. C. da Silva Filho, Y. A. V. Espinel, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. Tailoring group-velocity dispersion in microspheres with alumina coating. In CLEO, pp JTh2C.4. Optical Society of America (2020). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_AT-2020-JTh2C.4}{\faExternalLink}}
+\resumeItem {\underline{M. Inga}, L. F. dos Santos, J. M. C. da Silva Filho, Y. A. V. Espinel, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. Tailoring group-velocity dispersion in microspheres with alumina coating. In \textit{CLEO}, pp JTh2C.4. Optical Society of America (2020). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_AT-2020-JTh2C.4}{\faExternalLink}}
 \vspace{2pt}
-\resumeItem{L. Fujii, \textbf{M. Inga}, J. H. Soares, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion Control in Silicon Oxide Wedge Microdisks. In CLEO: QELS Fundamental Science, pp. JTu2A-111. Optical Society of America (2018). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_SI-2018-JTu2A.111}{\faExternalLink}}
+\resumeItem{L. Fujii, \underline{M. Inga}, J. H. Soares, T. P. Mayer Alegre, and G. S. Wiederhecker. Dispersion Control in Silicon Oxide Wedge Microdisks. In \textit{CLEO}: QELS Fundamental Science, pp. JTu2A-111. Optical Society of America (2018). \href{https://www.osapublishing.org/abstract.cfm?uri=CLEO_SI-2018-JTu2A.111}{\faExternalLink}}
+\resumeItemListEnd
+
+\textbf{Sharing and curation of data and software}
+\vspace{-3pt}
+\resumeItemListStart
+\resumeItem {\underline{M. Inga}, L. Fujii, J. M. da Silva Filho, J. Quintino, A. Ferlauto, F. C. Marques, T. P. M. Alegre, and G. S. Wiederhecker. (2020). Dataset and Simulation Files for article "Alumina coating for dispersion management in ultra-high Q microresonators" (Version v1.0) [Data set]. \href{https://zenodo.org/record/3932243}{Zenodo \faExternalLink}.}
 \resumeItemListEnd
 
 %-------------------------------------------------- Teacher Internship Programs --------------------------------------------------
 \section{\faPencil}{Teaching Experience}
 \resumeEntryStart
 \resumeEntryTD
-{\small Electric Circuits and Electromagnetism}{UNIVESP, 2019-II} 
-\small{Employed on a temporary contract by the UNIVESP in teaching-related responsibilities.}
+{Electric Circuits and Electromagnetism}{UNIVESP, 2019-II} 
+{\footnotesize Employed on a temporary contract by the UNIVESP in teaching-related responsibilities.}
+\vspace{-0.25cm}
 \resumeEntryTD
 {Experimental Physics IV: Alternating Current and Optics}{UNICAMP, 2015-II, 2016-II}
-\small{Participating in the Docent Training Stage Program at UNICAMP.}
+{\footnotesize Participating in the Docent Training Stage Program at UNICAMP.}
+\vspace{-0.25cm}
 \resumeEntryTD
 {Experimental Physics III: Electricity and Magnetism}{UNICAMP, 2014-II, 2016-I}
-\small{Participating in the Docent Training Stage Program at UNICAMP.}
+{\footnotesize Participating in the Docent Training Stage Program at UNICAMP.}
 \resumeEntryEnd
 
 %-------------------------------------------------- Professional Affiliations --------------------------------------------------
@@ -289,34 +299,38 @@
 \resumeEntryStart
 \resumeEntryTD
 {\small Optical Society of America (OSA)}{2007-Current}
-\small{Founder member of the OSA Student Chapter UNI, Lima, Peru. Currently, as a member of the OSA Student Chapter UNICAMP, São Paulo, Brazil.}
+{\footnotesize Founder member of the OSA Student Chapter UNI, Lima, Peru. Currently, as a member of the OSA Student Chapter UNICAMP, São Paulo, Brazil.}
 \resumeEntryEnd
 
 %-------------------------------------------------- Computer skills --------------------------------------------------
 \section{\faDesktop}{Computer skills}
 \resumeItemListStart
-\resumeItem{I use Latex for scientific reports and Mendeley as a reference manager. To create and edit vectorial images, I use Inkscape. Frequently, my presentations have been done in Impress, PowerPoint or Beamer.}
-\resumeItem{Because Office 365 is free for academic institutions, I usually use Microsoft Teams for communication and collaboration.}
+\resumeItem{I use Latex or Google Docs for scientific reports and Mendeley as a reference manager. To design and edit vectorial images, I use Inkscape. Frequently, my presentations have been done in Impress or Google Slides.}
 \resumeItem{I use pyVISA and pyQt to control instruments and automate experiments. For data exploration and visualization, I use Jupyter notebooks, Pandas, Numpy, Scipy, Sympy, and Matplotlib. Specific problems always will require the use of specialized Python packages.}
-\resumeItem{I use Linux as a development and production environment, but sometimes in the lab, Windows is required.}
+\resumeItem{I use preferentially Linux as a development and production environment.}
 \resumeItem{I have a strong preference for open-source software, but if I have access to competitive proprietary software like Comsol, Mathematica or Matlab, I will be able to use them too.}
+\resumeItem{I usually use Microsoft Teams for communication and collaboration.}
 \resumeItemListEnd
 
 %-------------------------------------------------- Interests --------------------------------------------------
 \section{\faThumbTack}{Interests}
+\vspace{-0.75cm}
 \resumeEntryStart
 \small
-\fourthcol{\resumeEntryS{}{Microcomb technology}}{\resumeEntryS{}{Optical sensing}}{\resumeEntryS{}{Optical spectroscopy}}{\resumeEntryS{}{Biophotonics}}
+\fourthcol{\resumeEntryS{}{\item Microcomb technology}}{\resumeEntryS{}{\item Optical sensing}}{\resumeEntryS{}{\item Biophotonics}}{\resumeEntryS{}{\item Optical spectroscopy}}
+\vspace{-0.8cm}
+\fourthcol{\resumeEntryS{}{\item Data Analyst}}{\resumeEntryS{}{\item 5G Technology}}{\resumeEntryS{}{\item Digital innovation}}{\resumeEntryS{}{\item Smart cities}}
 \resumeEntryEnd
 
 %-------------------------------------------------- References --------------------------------------------------
 \section{\faTripadvisor}{References}
 
-\vspace{5pt}
-Two professors with whom I have worked very closely in my graduate and postgraduate studies are:
+\vspace{3pt}
+Two professors with whom I have worked very closely are:
 \begin{description}
-	\item[Dr. Carmen Eyzaguirre] Professor at \href{https://fc.uni.edu.pe/fc/index.php/noticias-secundarias/item/12-eyzaguirre-gorvenia-carmen}{Optics and Photonics Laboratory} - UNI. \href{ceyzaguirre@uni.edu.pe}{\faEnvelopeO} ceyzaguirre@uni.edu.pe
 	\item[Dr. Gustavo Wiederhecker] Professor at \href{https://sites.ifi.unicamp.br/lpd/}{Device Research Laboratory} - UNICAMP. \href{gsw@unicamp.br}{\faEnvelopeO} gsw@unicamp.br
+	\vspace{-0.15cm}
+	\item[Dr. Carmen Eyzaguirre] Professor at \href{https://fc.uni.edu.pe/fc/index.php/noticias-secundarias/item/12-eyzaguirre-gorvenia-carmen}{Optics and Photonics Laboratory} - UNI. \href{ceyzaguirre@uni.edu.pe}{\faEnvelopeO} ceyzaguirre@uni.edu.pe
 \end{description}
 
 \end{document}
